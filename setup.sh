@@ -3,17 +3,16 @@ set -e
 
 StartPHP()
 {    
-    # allow access
-    sudo chmod -R 777 /www
-
     # setup phpinfo    
     if [ ! -d /www/phpinfo ]; then
+        sudo chmod -R 777 /www
         mkdir /www/phpinfo
         cp /tmp/phpinfo.php /www/phpinfo/index.php
     fi
     
     # setup phpmyadmin
     if [ ! -d /www/phpmyadmin ]; then
+        sudo chmod -R 777 /www
         cd /www
         composer create-project phpmyadmin/phpmyadmin --repository-url=https://www.phpmyadmin.net/packages.json --no-dev
         cp /www/phpmyadmin/config.sample.inc.php /www/phpmyadmin/config.inc.php
