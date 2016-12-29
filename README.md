@@ -13,3 +13,7 @@ Running
 ```bash
 docker run -d --link mariadb:database -p 8080:80 -v /home/user/www:/www:Z --name lampp baszczewski/lampp
 ```
+
+```bash
+docker run -d --link mariadb:database -p 8080:80 -v /mnt/dysk/Docker/data/www:/www:z --name lampp baszczewski/lampp
+```
